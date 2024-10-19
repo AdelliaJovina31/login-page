@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Link to "Quicksand" font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Register</h1>
+    </header>
+    <main>
+        <div class="register-wrapper">
+            <form action="register.php" method="post" id="registerForm" enctype="multipart/form-data">
+                <!-- profil -->
+                <div class="picture">
+                    <img id="profile-image" class ="profile-pict" src="https://i.pinimg.com/236x/ac/0f/41/ac0f419e977af681516e00829c5393ee.jpg" alt="Foto Profil"/>
+                    <div class="picture-input">
+                        <label for="upload" class="custom-file">Unggah Foto</label>
+                        <input type="file" id="upload" name="profile-picture" accept="image/*" onchange="previewImage(event)"></input>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="name" />
+                </div>
+
+                <div class="input-field">
+                    <label>Jenis Kelamin</label>
+                    <div class="radio-button">
+                        <div id="laki">
+                            <input type="radio" id="laki-laki" name="jenis-kelamin" value="Laki-laki">
+                            <label for="html">Laki-laki</label>
+                        </div>
+                        <div id="perempuan">
+                            <input type="radio" id="perempuan" name="jenis-kelamin" value="Perempuan">
+                            <label for="css">Perempuan</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ttl">
+                    <div class="input-field">
+                        <label>Tempat lahir</label>
+                        <input type="text" id="tempat-lahir" />
+                    </div>
+                    <div class="input-field">
+                        <label>Tanggal lahir</label>
+                        <input type="date" id="tgl-lahir" />
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <label>Alamat</label>
+                    <input type="text" id="alamat" />
+                </div>
+
+                <div class="contact">
+                    <div class="input-field">
+                        <label>Email</label>
+                        <input type="text" id="email" />
+                    </div>
+                    
+                    <div class="input-field-2">
+                        <label>No. HP</label>
+                        <input type="text" id="no-tlp" />
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <label>Hobi</label>
+                    <input type="text" id="hobi" />
+                </div>
+
+                <div class="input-field">
+                    <label>Password</label>
+                    <input type="password" id="password" />
+                </div>
+
+                <div class="input-field">
+                    <label>Konfirmasi Password</label>
+                    <input type="password" id="password-confirmation" />
+                </div>
+
+                <button type="submit">Daftar</button>
+            </form>
+
+            <!-- Modal Output -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Kartu Hasil Registrasi</h2>
+                    <div id="modal-body">
+                        <button id="confirm-btn">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
